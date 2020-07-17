@@ -1,0 +1,25 @@
+import random
+
+c = ['剪刀','布','石头'] # 建立一个选项列表
+b = random.randint(0,2) # 电脑随机生成一个数，来确定在列表中的值
+d = input("请输入一个数字来开始游戏(剪刀0，布1，石头2)：") # 自己输入一个数字
+
+if  str.isdigit(d):# 判断输入的必须是纯数字
+    if 0<=int(d)<=2:#而且输入的数字还要在0到2之间
+        a = int(d)#将input输入的字符串转化为数字，之前if已经判断过进来的d是纯数字构成的字符串
+        print("我出的是%s"%c[b])
+        if b == a:
+            print("哦哟，真是心有灵犀，平局，再来再来！")
+        elif abs(b - a) == 1 and b < a:
+            print("哈哈，这次是我赢啦！")
+        elif abs(b - a) == 1 and b > a:
+            print("哈哈，你运气不错呀！")
+        elif abs(b - a) == 2 and b < a:
+            print("哈哈，你运气不错呀！")
+        elif abs(b - a) == 2 and b > a:
+            print("哈哈，这次是我赢啦！")
+    else:
+        print("请输入0-2的整数数字才可以开始哦！")
+else:
+    print("请输入0-2的整数数字才可以开始哦！")
+
