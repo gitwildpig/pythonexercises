@@ -1,0 +1,24 @@
+products = [["iphone",6888],["MacPro",14800],\
+["小米6",2499],["Coffee",31],["Book",60],["Nike",699]]
+i = 0
+print("-"*5,"商品列表","-"*5)
+#打印商品列表，包含编号，名称和价格
+for product in products:
+    print(i,product[0],product[1])
+    i = i + 1
+shopcar = []
+cartemp = input("您想购买哪款商品呢？请您输入对应商品的编号：")#输入商品编号
+price = 0
+for numb in cartemp:#遍历输入的字符
+    num = int(numb)#转换成数字
+    shopcar.append(products[num])#提取对应的商品名称和价格
+    temp = products[num][1]#提取价格
+    price = price + temp#计算总价
+print("-"*5,"您购物车内的商品如下","-"*5)
+#打印购物车内容，包含编号，商品名称和价格
+j = 0
+for goods in shopcar:
+    print(j,goods[0],goods[1])
+    j = j + 1
+#打印购物车商品数量和总价
+print("当前购物车商品总计%d件，总价为%d元"%(len(cartemp),price))
