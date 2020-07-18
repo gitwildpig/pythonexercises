@@ -1,0 +1,61 @@
+# f = open("abc.txt","w")
+# f.write("生不带来，死不带去.")
+# f.close()
+'''
+f = open("abc.txt","r")
+content = f.read(5)
+print(content)
+content = f.read(5)
+print(content)
+f.close()
+'''
+#一次性读取全部文件为列表
+'''
+f = open("abc.txt","r")
+content = f.readlines()
+i = 1
+for temp in content:
+    print("%d:%s"%(i,temp))
+    i = i + 1
+f.close()
+'''
+'''
+f = open("abc.txt","r")
+content = f.readline()
+print("1:%s"%content,end="")
+content = f.readline()
+print("2:%s"%content,end="")
+'''
+#打印异常
+'''
+import time
+try:
+    print("-----test1-----")
+    f = open("abc.txt","r")
+    print("-----test2-----")
+    try:
+        while True:
+            content = f.readline()
+            if len(content) == 0:
+                break
+            time.sleep(2)
+            print(content,end="")
+    finally:
+        f.close()
+        print("程序执行完毕")
+except Exception as result:
+    print(result)
+'''
+f = open("gushi.txt","w")
+f.write("生不带来，死不带去.\n生不带来，死不带去。\n生不带来,死不带去.\n生不带来,死不带去。")
+f.close()
+f = open("gushi.txt","r")
+x = f.read()
+g = open("copy.txt","w")
+g.write(x)
+f.close()
+g.close()
+g = open("copy.txt","r")
+y = g.readlines()
+for z in y:
+    print(z,end="")
