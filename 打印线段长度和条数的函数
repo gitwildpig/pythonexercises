@@ -1,0 +1,118 @@
+'''
+#tuple元组不能修改内容
+#增
+tup1 = (12,34,56)
+tup1[0] = 100#报错
+'''
+
+'''
+tup1 = (12,34,56)
+tup2 = ("abc","xyz")
+tup = tup1 + tup2
+print(tup,"\n",tup1)
+#删
+del tup1#删除整个元组变量，但是不能删除某一个元素
+print(tup1)
+'''
+# info = {"name":"吴彦祖","age":18}
+# print(info["name"],info["age"])
+'''
+#访问不存在的键
+#print(info["gender"])#keyerror
+print(info.get("gender"))#没有返回none
+
+print(info.get("gender","某啊"))#没找打可以设定返回值"某啊"
+print(info.get("name"))
+'''
+#删除某一键值
+'''
+newID = input("请输入新的学号")
+info["id"] = newID
+del info["name"]
+print(info["id"],"\n",info)
+'''
+#清空字典内容
+'''
+info.clear()
+print(info)
+'''
+#查 其实就是遍历
+
+# info1 = {"name":"吴彦祖","age":18,"id":23}
+'''
+print(info1.keys())
+print(info1.values())
+print(info1.items())#返回元组的形式，操作按照元组操作
+'''
+#遍历
+'''
+#遍历所有的键
+for key in info1.keys():
+    print(key)
+#遍历所有的值
+for value in info1.values():
+    print(value)
+'''
+'''
+#遍历所有的键值对
+for key,value in info1.items():
+    print("key=%s,values=%s"%(key,value))
+'''
+'''
+#函数的定义
+def printinfo():
+    print("-"*30)
+    print("      人生苦短，我用Python   ")
+    print("-" * 30)
+#函数的调用
+printinfo()
+'''
+#带参数的函数
+'''
+def add2num(a,b):
+    c = a + b
+    print(c)
+
+add2num(11,22)
+'''
+#返回多个值的函数
+'''
+def divid(a,b):
+    shang = a//b
+    yushu = a%b
+    return shang,yushu
+
+shu,yu = divid(5,2)
+print(shu,yu)
+'''
+
+def line():
+    print("_"*30)
+
+def numline():
+    num = input("你想画一条多长的线段？打算画多少条？请输入对应的数字（用空格隔开）：")
+    j=0
+    for x in num:
+        j = j +1
+        if x.isspace() == True:
+            break
+    i = 1
+    d = int(num[j:])
+    while i <= d:
+        print("-"*int(num[0:j]))
+        i = i + 1
+
+def qiuhe(a,b,c):
+    d = a + b + c
+    return d
+
+def ave(a,b,c):
+    d = qiuhe(a,b,c)/3
+    print("%d,%d,%d这三个数的平均值为%d"%(a,b,c,d))
+
+line()
+print("——————————分割线————————")
+numline()
+print("——————————分割线————————")
+ave(3,2,4)
+
